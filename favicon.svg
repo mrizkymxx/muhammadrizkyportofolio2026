@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Neobrutalist Yellow Base with Thick Black Border -->
+  <rect x="4" y="4" width="56" height="56" fill="#FFE600" stroke="#000000" stroke-width="6"/>
+  <!-- Drop Shadow Accent line -->
+  <path d="M10 54 L54 54 L54 10" fill="none" stroke="#000000" stroke-width="3" opacity="0.15"/>
+  <!-- Terminal Prompt '>_' Symbol -->
+  <path d="M16 20 L30 32 L16 44" fill="none" stroke="#000000" stroke-width="7" stroke-linecap="square" stroke-linejoin="miter"/>
+  <line x1="34" y1="44" x2="48" y2="44" stroke="#000000" stroke-width="7" stroke-linecap="square"/>
+</svg>

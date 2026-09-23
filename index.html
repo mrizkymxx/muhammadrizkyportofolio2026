@@ -1,0 +1,1367 @@
+<title>Muhammad Rizky</title>
+<meta name="viewport" content="width=1140">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800;12..96,900&family=Work+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap">
+
+<style>
+:root {
+  --bg: #fffdf5;
+  --grid-dot: rgba(0, 0, 0, 0.12);
+  --surface: #ffffff;
+  --surface-alt: #fef08a;
+  --text: #09090b;
+  --text-muted: #52525b;
+  --border: #000000;
+  --border-w: 3.5px;
+  --accent-yellow: #ffe600;
+  --accent-cyan: #00e5ff;
+  --accent-pink: #ff5e7e;
+  --accent-green: #10b981;
+  --accent-purple: #c084fc;
+  --shadow-color: #000000;
+  --shadow-sm: 3px 3px 0px var(--shadow-color);
+  --shadow-md: 5px 5px 0px var(--shadow-color);
+  --shadow-lg: 10px 10px 0px var(--shadow-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #090d16;
+    --grid-dot: rgba(255, 255, 255, 0.12);
+    --surface: #131b2e;
+    --surface-alt: #1e293b;
+    --text: #f8fafc;
+    --text-muted: #a1a1aa;
+    --border: #f8fafc;
+    --accent-yellow: #facc15;
+    --accent-cyan: #22d3ee;
+    --accent-pink: #fb7185;
+    --accent-green: #34d399;
+    --accent-purple: #c084fc;
+    --shadow-color: #000000;
+    --shadow-sm: 3px 3px 0px #000000;
+    --shadow-md: 5px 5px 0px #000000;
+    --shadow-lg: 10px 10px 0px #000000;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #090d16;
+  --grid-dot: rgba(255, 255, 255, 0.12);
+  --surface: #131b2e;
+  --surface-alt: #1e293b;
+  --text: #f8fafc;
+  --text-muted: #a1a1aa;
+  --border: #f8fafc;
+  --accent-yellow: #facc15;
+  --accent-cyan: #22d3ee;
+  --accent-pink: #fb7185;
+  --accent-green: #34d399;
+  --accent-purple: #c084fc;
+  --shadow-color: #000000;
+  --shadow-sm: 3px 3px 0px #000000;
+  --shadow-md: 5px 5px 0px #000000;
+  --shadow-lg: 10px 10px 0px #000000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--grid-dot) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+  animation: move-grid 45s linear infinite;
+  color: var(--text);
+  font-family: 'Work Sans', system-ui, sans-serif;
+  line-height: 1.5;
+  padding-block: 2.5rem 6rem;
+  padding-inline: 1.5rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+@keyframes move-grid {
+  0% { background-position: 0 0; }
+  100% { background-position: 520px 520px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
+  .neo-card-hover:hover { transform: none; }
+}
+
+.container {
+  width: 1080px;
+  min-width: 1080px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  color: var(--text);
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Neobrutalist Primitives */
+.neo-card {
+  background: var(--surface);
+  border: var(--border-w) solid var(--border);
+  box-shadow: var(--shadow-md);
+  border-radius: 0px;
+  position: relative;
+  transition: transform 0.16s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+.neo-card-hover:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.neo-card-hover:active {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.neo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.85rem 1.6rem;
+  background: var(--surface);
+  color: var(--text);
+  border: var(--border-w) solid var(--border);
+  box-shadow: var(--shadow-sm);
+  user-select: none;
+  transition: all 0.1s ease;
+}
+
+.neo-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+}
+
+.neo-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--shadow-color);
+}
+
+.neo-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border: 2.5px solid var(--border);
+  box-shadow: 2px 2px 0px var(--shadow-color);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.neo-select {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 0.45rem 1rem;
+  background: var(--surface);
+  color: var(--text);
+  border: var(--border-w) solid var(--border);
+  box-shadow: var(--shadow-sm);
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.65rem center;
+  background-size: 1rem;
+  padding-right: 2rem;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.neo-select:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Header Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--surface);
+  border: var(--border-w) solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.nav-brand {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.status-dot {
+  width: 14px;
+  height: 14px;
+  background: var(--accent-green);
+  border: 2.5px solid var(--border);
+  border-radius: 50%;
+  animation: pulse-dot 1.8s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.15); }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* HERO SECTION - RESTRUCTURED WITH PHOTO */
+.hero-wrapper {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+/* Photo Frame */
+.photo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--accent-yellow);
+  padding: 1.25rem;
+  border: var(--border-w) solid var(--border);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.photo-inner {
+  position: relative;
+  border: var(--border-w) solid var(--border);
+  box-shadow: var(--shadow-sm);
+  background: #000;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+}
+
+.photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.photo-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--accent-pink);
+  color: #ffffff;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 900;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+  border: 2.5px solid #000000;
+  box-shadow: 3px 3px 0px #000000;
+  transform: rotate(-3deg);
+}
+
+.photo-caption {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: var(--surface);
+  color: var(--text);
+  padding: 0.85rem 1rem;
+  border: 2.5px solid var(--border);
+  box-shadow: 2px 2px 0px var(--shadow-color);
+}
+
+.photo-name {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 900;
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
+.photo-loc {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* Hero Content */
+.hero-content {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.75rem;
+}
+
+.hero-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.role-pill {
+  width: fit-content;
+  background: var(--accent-cyan);
+  color: #000000;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 900;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  padding: 0.4rem 1rem;
+  border: 2.5px solid var(--border);
+  box-shadow: 3px 3px 0px var(--shadow-color);
+  text-transform: uppercase;
+}
+
+.hero-headline {
+  font-size: clamp(2.3rem, 5vw, 3.8rem);
+  line-height: 1.05;
+}
+
+.hero-pitch {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 620px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+/* 3 Quick Numbers Row */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.stat-box {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.stat-box.yellow { background: var(--accent-yellow); color: #000; }
+.stat-box.pink { background: var(--accent-pink); color: #fff; }
+.stat-box.cyan { background: var(--accent-cyan); color: #000; }
+
+.stat-big {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 3.25rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.stat-text {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+/* Core Arsenal Pillars */
+.section-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.section-heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+}
+
+.pillar-card {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.pillar-icon {
+  font-size: 2.5rem;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-w) solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.pillar-card:nth-child(1) .pillar-icon { background: var(--accent-yellow); }
+.pillar-card:nth-child(2) .pillar-icon { background: var(--accent-cyan); }
+.pillar-card:nth-child(3) .pillar-icon { background: var(--accent-purple); }
+
+.pillar-title {
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+
+.pillar-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.pillar-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+/* Interactive Terminal Section */
+.terminal-block {
+  background: #090d16;
+  color: #f1f5f9;
+  border: var(--border-w) solid var(--border);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.terminal-topbar {
+  background: #141c2e;
+  border-bottom: 3px solid #293548;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #000;
+  border-radius: 50%;
+}
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+.terminal-screen {
+  padding: 1.5rem;
+  min-height: 220px;
+  max-height: 320px;
+  overflow-y: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cli-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.25rem;
+  background: #141c2e;
+  border-top: 2px dashed #293548;
+}
+
+.cli-pill-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: #1e293b;
+  color: #38bdf8;
+  border: 2px solid #334155;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.cli-pill-btn:hover {
+  background: #38bdf8;
+  color: #000;
+  border-color: #38bdf8;
+}
+
+.terminal-input-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #0f172a;
+  padding: 0.85rem 1.25rem;
+  border-top: 3px solid #293548;
+}
+
+.term-field {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+}
+
+/* Projects Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.project-item {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-h3 {
+  font-size: 1.6rem;
+  line-height: 1.15;
+}
+
+.project-p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.project-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.25rem;
+  border-top: 2.5px dashed var(--border);
+}
+
+/* Certifications Showcase */
+.cert-section {
+  padding: 2.5rem;
+}
+
+.cert-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cert-card {
+  padding: 1.1rem 1.4rem;
+  background: var(--bg);
+  border: 2.5px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* Contact Footer CTA */
+.footer-cta {
+  padding: 3.5rem 2rem;
+  background: var(--accent-yellow);
+  color: #000000;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-heading {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.05;
+}
+
+.footer-sub {
+  font-size: 1.2rem;
+  font-weight: 600;
+  max-width: 600px;
+}
+
+.footer-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--accent-green);
+  color: #000;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 1rem 1.75rem;
+  border: var(--border-w) solid #000;
+  box-shadow: 6px 6px 0px #000;
+  z-index: 99999;
+  transform: translateY(160%);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast.active {
+  transform: translateY(0);
+}
+</style>
+
+<div class="container">
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <div class="status-dot"></div>
+      <span>MUHAMMAD RIZKY</span>
+    </div>
+
+    <div class="nav-links">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="mono" style="font-size: 0.8rem; font-weight: 800; color: var(--text);" data-i18n="lang_label">🌐 BAHASA:</span>
+        <select id="langSelect" onchange="switchLang(this.value)" class="neo-select" aria-label="Select Language">
+          <option value="id" selected>🇮🇩 INDO</option>
+          <option value="en">🇺🇸 ENGLISH</option>
+          <option value="zh">🇨🇳 中文</option>
+          <option value="ko">🇰🇷 한국어</option>
+        </select>
+      </div>
+      <button class="neo-btn" id="themeToggle" style="padding: 0.45rem 1rem; font-size: 0.9rem;">
+        <span id="themeEmoji">🌙</span> <span id="themeLabel">DARK</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION WITH PHOTO -->
+  <section class="hero-wrapper">
+
+    <!-- Left: Photo Frame -->
+    <div class="photo-card neo-card-hover">
+      <div class="photo-badge" data-i18n="badge">🛠️ IT SUPPORT & SYSADMIN</div>
+      <div class="photo-inner">
+        <picture>
+          <source srcset="profile_opt.webp" type="image/webp">
+          <img src="profile.png" alt="Muhammad Rizky" class="photo-img">
+        </picture>
+      </div>
+      <div class="photo-caption">
+        <div class="photo-name">Muhammad Rizky</div>
+        <div class="photo-loc">📍 Jepara, Jawa Tengah • Indonesia</div>
+      </div>
+    </div>
+
+    <!-- Right: Big Punchy Intro -->
+    <div class="neo-card hero-content">
+      <div class="hero-header">
+        <div class="role-pill" data-i18n="role">IT Support Specialist & Systems Admin</div>
+        <h1 class="hero-headline" data-i18n="headline">Battle-Tested IT Support & Zero-Downtime Systems Administration.</h1>
+        <p class="hero-pitch" data-i18n="pitch">
+          Delivering rapid hardware diagnostics, Mikrotik network routing, and multi-endpoint maintenance across factory floors and corporate offices. Combines field troubleshooting with <strong>PowerShell 7+</strong> automation and <strong>SQL</strong> database upkeep to guarantee maximum system uptime.
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <a href="CV_Muhammad_Rizky.pdf" download="CV_Muhammad_Rizky_IT_Developer.pdf" class="neo-btn" style="background: var(--accent-yellow); color: #000;" id="heroBtnCv" data-i18n="btn_cv">
+          📄 DOWNLOAD CV
+        </a>
+        <a href="https://wa.me/6281393177004?text=Halo%20Rizky,%20saya%20melihat%20portofolio%20Anda" target="_blank" rel="noopener noreferrer" class="neo-btn" style="background: #25D366; color: #000;" id="heroBtnWa" data-i18n="btn_wa">
+          💬 WHATSAPP ↗
+        </a>
+        <a href="https://linkedin.com/in/mrizkymxx" target="_blank" rel="noopener noreferrer" class="neo-btn" style="background: #0A66C2; color: #fff;">
+          💼 LINKEDIN ↗
+        </a>
+        <a href="https://github.com/mrizkymxx" target="_blank" rel="noopener noreferrer" class="neo-btn" style="background: var(--accent-cyan); color: #000;">
+          🐙 GITHUB ↗
+        </a>
+        <button class="neo-btn" onclick="copyEmail('muhamrizky00@gmail.com')" id="heroBtnEmail" data-i18n="btn_email">
+          ✉️ COPY EMAIL
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- BENTO IMPACT STATS (BIG NUMBERS) -->
+  <section class="stats-row">
+    <div class="neo-card stat-box yellow neo-card-hover">
+      <div class="stat-big">4+ Years</div>
+      <div class="stat-text" data-i18n="stat1_txt">Hands-on IT Field & Production Support</div>
+    </div>
+    <div class="neo-card stat-box cyan neo-card-hover">
+      <div class="stat-big">100+</div>
+      <div class="stat-text" data-i18n="stat2_txt">Workstations, LAN & POS Hardware Maintained</div>
+    </div>
+    <div class="neo-card stat-box pink neo-card-hover">
+      <div class="stat-big">99.9%</div>
+      <div class="stat-text" data-i18n="stat3_txt">Factory Network & Systems Operations Uptime</div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE TERMINAL -->
+  <section class="terminal-block">
+    <div class="terminal-topbar">
+      <div class="terminal-dots">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      <div class="mono" style="font-size: 0.85rem; color: #94a3b8;">rizky@it-admin-pc:~/support-toolkit (PowerShell 7+)</div>
+      <div class="mono" style="font-size: 0.8rem; color: #4ade80; font-weight: 700;">● READY</div>
+    </div>
+
+    <div class="terminal-screen" id="termScreen">
+      <div style="color: #94a3b8;">[INIT] Loading IT Support & Systems Admin Diagnostic Toolkit...</div>
+      <div style="color: #4ade80;">✓ Hardware diagnostic modules loaded (SMART, RAM, PSU, Thermal).</div>
+      <div style="color: #4ade80;">✓ Mikrotik RouterOS & LAN Gigabit link status: UP.</div>
+      <div style="color: #facc15;" data-i18n="term_tip">💡 Click any pill below to run simulated IT support commands:</div>
+    </div>
+
+    <div class="cli-shortcuts">
+      <span class="mono" style="font-size: 0.8rem; color: #64748b; font-weight: 700;">RUN:</span>
+      <button class="cli-pill-btn" onclick="execTerm('hardware')">$ hardware</button>
+      <button class="cli-pill-btn" onclick="execTerm('network')">$ network</button>
+      <button class="cli-pill-btn" onclick="execTerm('pos')">$ pos</button>
+      <button class="cli-pill-btn" onclick="execTerm('automation')">$ automation</button>
+      <button class="cli-pill-btn" onclick="execTerm('cv')">$ cv</button>
+      <button class="cli-pill-btn" onclick="execTerm('whatsapp')">$ whatsapp</button>
+      <button class="cli-pill-btn" onclick="execTerm('clear')">$ clear</button>
+    </div>
+
+    <form class="terminal-input-bar" onsubmit="handleTermInput(event)">
+      <span class="mono" style="color: #38bdf8; font-weight: 800;">PS C:\IT-Support></span>
+      <input type="text" id="termCmdInput" class="term-field" placeholder="Type a command (try 'hardware' or 'network')..." autocomplete="off">
+      <button type="submit" class="neo-btn" style="padding: 0.4rem 1rem; font-size: 0.85rem; background: #22c55e; color: #000; border-width: 2.5px;">
+        RUN
+      </button>
+    </form>
+  </section>
+
+  <!-- 3 CORE PILLARS (LARGE & SPACIOUS) -->
+  <section>
+    <div class="section-title-wrap">
+      <div class="section-label" data-i18n="pillars_label">Core Specialization</div>
+      <h2 class="section-heading" data-i18n="pillars_head">Built for High Availability & Rapid Field Support.</h2>
+    </div>
+
+    <div class="pillars-grid">
+
+      <div class="neo-card pillar-card neo-card-hover">
+        <div class="pillar-icon">🛠️</div>
+        <h3 class="pillar-title" data-i18n="p1_title">Hardware & Endpoint PC Systems</h3>
+        <p class="pillar-desc" data-i18n="p1_desc">
+          Component-level diagnostics (RAM, SSD, PSU), SMART drive health audits, thermal paste renewal, Windows 10/11 Pro & Debian headless deployments, and rapid HDD-to-SSD cloning.
+        </p>
+        <div class="pillar-tags">
+          <span class="neo-tag">Hardware Diagnostics</span>
+          <span class="neo-tag">Windows 11 Pro</span>
+          <span class="neo-tag">SMART Health</span>
+          <span class="neo-tag">Drive Cloning</span>
+          <span class="neo-tag">Debian Linux</span>
+        </div>
+      </div>
+
+      <div class="neo-card pillar-card neo-card-hover">
+        <div class="pillar-icon">🌐</div>
+        <h3 class="pillar-title" data-i18n="p2_title">Network & Infrastructure Engineering</h3>
+        <p class="pillar-desc" data-i18n="p2_desc">
+          Structured Cat5e/Cat6 LAN cabling (T568B), Mikrotik router config, VLAN (802.1Q) segmentation, DHCP/Static IP management, enterprise Wi-Fi APs, and Wireshark packet analysis.
+        </p>
+        <div class="pillar-tags">
+          <span class="neo-tag">Mikrotik RouterOS</span>
+          <span class="neo-tag">VLAN 802.1Q</span>
+          <span class="neo-tag">Cat6 Gigabit LAN</span>
+          <span class="neo-tag">Wireshark</span>
+          <span class="neo-tag">Wi-Fi AP</span>
+        </div>
+      </div>
+
+      <div class="neo-card pillar-card neo-card-hover">
+        <div class="pillar-icon">⚡</div>
+        <h3 class="pillar-title" data-i18n="p3_title">POS Systems & IT Automation</h3>
+        <p class="pillar-desc" data-i18n="p3_desc">
+          Maintenance of ESC/POS thermal printers, industrial barcode scanners, and touchscreen kiosks, accelerated by PowerShell 7+ scripts, batch automation, M365, and ERP/SQL administration.
+        </p>
+        <div class="pillar-tags">
+          <span class="neo-tag">PowerShell 7+</span>
+          <span class="neo-tag">ESC/POS</span>
+          <span class="neo-tag">ERP (Odoo/ERPNext)</span>
+          <span class="neo-tag">PostgreSQL</span>
+          <span class="neo-tag">M365 Admin</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS (BIG CARDS) -->
+  <section>
+    <div class="section-title-wrap">
+      <div class="section-label" data-i18n="proj_label">Selected Projects</div>
+      <h2 class="section-heading" data-i18n="proj_head">Featured Technical Work.</h2>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Card 1 -->
+      <div class="neo-card project-item neo-card-hover">
+        <div style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="project-meta">
+            <span class="neo-tag" style="background:var(--accent-yellow); color:#000;">POWERSHELL AUTOMATION</span>
+            <span class="mono" style="font-weight:700; font-size:0.85rem;">2024 – Present</span>
+          </div>
+          <h3 class="project-h3" data-i18n="pr1_title">IT Automation Toolkit & Endpoint Maintenance</h3>
+          <p class="project-p" data-i18n="pr1_desc">
+            Engineered automated PowerShell 7+ and Windows batch suites for unattended workstation diagnostics, disk optimization, drive health (SMART) auditing, and silent driver/patch deployments across office endpoints.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+            <span class="neo-tag">PowerShell 7+</span>
+            <span class="neo-tag">Batch Script</span>
+            <span class="neo-tag">Windows 11</span>
+            <span class="neo-tag">SMART Health</span>
+            <span class="neo-tag">Automation</span>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="mono" style="font-size:0.85rem; color:var(--text-muted);">Endpoint Management</span>
+          <a href="https://github.com/mrizkymxx" target="_blank" rel="noopener noreferrer" class="neo-btn" style="padding:0.45rem 1rem; font-size:0.9rem;">
+            TOOLKIT ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="neo-card project-item neo-card-hover">
+        <div style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="project-meta">
+            <span class="neo-tag" style="background:var(--accent-pink); color:#fff;">POS & HARDWARE</span>
+            <span class="mono" style="font-weight:700; font-size:0.85rem;">Hardware Integration</span>
+          </div>
+          <h3 class="project-h3" data-i18n="pr2_title">Q-Premium Queue POS & ESC/POS Printing</h3>
+          <p class="project-p" data-i18n="pr2_desc">
+            Configured and maintained high-reliability queue management and POS hardware, integrating ESC/POS thermal receipt printers, auto-cutter hex protocols, USB/RS-232 barcode scanners, and resolving Windows print spooler lockups.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+            <span class="neo-tag">ESC/POS</span>
+            <span class="neo-tag">Thermal Printer</span>
+            <span class="neo-tag">Barcode Scanners</span>
+            <span class="neo-tag">Print Spooler</span>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="mono" style="font-size:0.85rem; color:var(--text-muted);">POS Hardware</span>
+          <a href="https://github.com/mrizkymxx/q-premium-queue" target="_blank" rel="noopener noreferrer" class="neo-btn" style="padding:0.45rem 1rem; font-size:0.9rem;">
+            GITHUB REPO ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="neo-card project-item neo-card-hover">
+        <div style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="project-meta">
+            <span class="neo-tag" style="background:var(--accent-purple); color:#000;">NETWORK & KIOSK</span>
+            <span class="mono" style="font-weight:700; font-size:0.85rem;">Plant Floor</span>
+          </div>
+          <h3 class="project-h3" data-i18n="pr3_title">Factory Touchscreen & Structured Network Setup</h3>
+          <p class="project-p" data-i18n="pr3_desc">
+            Deployed industrial touchscreen kiosks and structured Cat6 Gigabit LAN across factory production lines. Configured Mikrotik routers with VLAN segmentation (802.1Q), DHCP reservations, and Wi-Fi APs for zero-interference plant operations.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+            <span class="neo-tag">Mikrotik</span>
+            <span class="neo-tag">VLAN 802.1Q</span>
+            <span class="neo-tag">Cat6 Cabling</span>
+            <span class="neo-tag">Industrial Kiosk</span>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="mono" style="font-size:0.85rem; color:var(--text-muted);">PT Quark Quality Pack / BSM</span>
+          <a href="https://github.com/mrizkymxx" target="_blank" rel="noopener noreferrer" class="neo-btn" style="padding:0.45rem 1rem; font-size:0.9rem;">
+            OVERVIEW ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="neo-card project-item neo-card-hover">
+        <div style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="project-meta">
+            <span class="neo-tag" style="background:var(--accent-cyan); color:#000;">ERP & SYSADMIN</span>
+            <span class="mono" style="font-weight:700; font-size:0.85rem;">Enterprise</span>
+          </div>
+          <h3 class="project-h3" data-i18n="pr4_title">ERP & Inventory Systems Administration</h3>
+          <p class="project-p" data-i18n="pr4_desc">
+            Administered daily operations and database health for Odoo and ERPNext production tracking. Executed PostgreSQL queries, resolved sync conflicts, managed M365/Google Workspace user permissions, and provided prompt remote support via AnyDesk.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.4rem;">
+            <span class="neo-tag">Odoo ERP</span>
+            <span class="neo-tag">ERPNext</span>
+            <span class="neo-tag">PostgreSQL</span>
+            <span class="neo-tag">M365 Admin</span>
+            <span class="neo-tag">AnyDesk</span>
+          </div>
+        </div>
+        <div class="project-foot">
+          <span class="mono" style="font-size:0.85rem; color:var(--text-muted);">Enterprise Helpdesk</span>
+          <a href="https://github.com/mrizkymxx" target="_blank" rel="noopener noreferrer" class="neo-btn" style="padding:0.45rem 1rem; font-size:0.9rem;">
+            SYSTEMS ↗
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION & CERTIFICATIONS SECTION -->
+  <section class="neo-card cert-section">
+    <!-- Education Block -->
+    <div class="section-title-wrap">
+      <div class="section-label" data-i18n="edu_label">Academic Background</div>
+      <h2 class="section-heading" data-i18n="edu_heading">Education.</h2>
+    </div>
+
+    <div class="neo-card" style="padding: 1.6rem; background: var(--bg); border: 2.5px solid var(--border); box-shadow: var(--shadow-sm); margin-bottom: 2.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+        <h3 style="font-size: 1.35rem;" data-i18n="edu_inst">Universitas Islam Nahdlatul Ulama (UNISNU) Jepara</h3>
+        <span class="neo-tag" style="background: var(--accent-yellow); color: #000;">2021 – 2025 / 2026</span>
+      </div>
+      <div style="font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 0.35rem;" data-i18n="edu_degree">
+        S1 Sistem Informasi (Bachelor of Information Systems) | Mahasiswa Tingkat Akhir
+      </div>
+      <div style="font-size: 0.95rem; color: var(--text-muted);" data-i18n="edu_focus">
+        Fokus: Software Engineering, Data Science, Machine Learning, dan Enterprise Systems
+      </div>
+    </div>
+
+    <!-- Certifications Block -->
+    <div class="section-title-wrap">
+      <div class="section-label" data-i18n="cert_label">Verified Credentials</div>
+      <h2 class="section-heading" data-i18n="cert_head">Certifications.</h2>
+    </div>
+
+    <div class="cert-badges-grid">
+      <div class="cert-card">
+        <span>☁️ Dasar Cloud & Gen AI di AWS</span>
+        <span class="neo-tag">Dicoding 2026</span>
+      </div>
+      <div class="cert-card">
+        <span>📐 Spec-Driven Development dg Kiro</span>
+        <span class="neo-tag">Dicoding 2026</span>
+      </div>
+      <div class="cert-card">
+        <span>📊 Fundamental Pemrosesan Data</span>
+        <span class="neo-tag">Dicoding 2026</span>
+      </div>
+      <div class="cert-card">
+        <span>🗄️ Structured Query Language (SQL)</span>
+        <span class="neo-tag">Dicoding 2024</span>
+      </div>
+      <div class="cert-card">
+        <span>🔬 Data Science Certification</span>
+        <span class="neo-tag">Dicoding 2024</span>
+      </div>
+      <div class="cert-card">
+        <span>💼 Data Scientist Professional</span>
+        <span class="neo-tag">Skill Academy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <footer class="neo-card footer-cta">
+    <h2 class="footer-heading" data-i18n="footer_head">Need Zero-Downtime IT Support?</h2>
+    <p class="footer-sub" data-i18n="footer_sub">
+      Available for corporate workstation maintenance, factory network infrastructure, and automated IT systems support.
+    </p>
+
+    <div class="footer-buttons">
+      <a href="CV_Muhammad_Rizky.pdf" download="CV_Muhammad_Rizky_IT_Developer.pdf" class="neo-btn" style="background: var(--accent-pink); color: #fff;" id="footerBtnCv" data-i18n="btn_cv">
+        📄 DOWNLOAD CV
+      </a>
+      <a href="https://wa.me/6281393177004?text=Halo%20Rizky,%20saya%20melihat%20portofolio%20Anda" target="_blank" rel="noopener noreferrer" class="neo-btn" style="background: #25D366; color: #000;" id="footerBtnWa" data-i18n="btn_wa">
+        💬 CHAT WHATSAPP ↗
+      </a>
+      <a href="https://linkedin.com/in/mrizkymxx" target="_blank" rel="noopener noreferrer" class="neo-btn" style="background: #0A66C2; color: #fff;">
+        💼 LINKEDIN ↗
+      </a>
+      <a href="https://github.com/mrizkymxx" target="_blank" rel="noopener noreferrer" class="neo-btn" style="background: #fff; color: #000;">
+        🐙 GITHUB PROFILE ↗
+      </a>
+      <button class="neo-btn" onclick="copyEmail('muhamrizky00@gmail.com')" style="background: #000; color: #fff;" id="footerBtnEmail" data-i18n="btn_email">
+        ✉️ COPY EMAIL
+      </button>
+    </div>
+
+    <div class="mono" style="font-size: 0.85rem; font-weight: 700; margin-top: 1rem;">
+      © 2026 MUHAMMAD RIZKY • JEPARA, JAWA TENGAH • INTERACTIVE NEOBRUTALISM
+    </div>
+  </footer>
+
+</div>
+
+<!-- Interactive Toast -->
+<div class="toast" id="copyToast">COPIED TO CLIPBOARD!</div>
+
+<script>
+// Theme Management - Starts strictly in Light Mode by default
+const themeBtn = document.getElementById('themeToggle');
+const themeEmoji = document.getElementById('themeEmoji');
+const themeLabel = document.getElementById('themeLabel');
+
+let activeTheme = localStorage.getItem('theme') || 'light';
+
+function setAppTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  localStorage.setItem('theme', t);
+  if (t === 'dark') {
+    themeEmoji.textContent = '☀️';
+    themeLabel.textContent = 'LIGHT';
+  } else {
+    themeEmoji.textContent = '🌙';
+    themeLabel.textContent = 'DARK';
+  }
+}
+setAppTheme(activeTheme);
+
+themeBtn.addEventListener('click', () => {
+  activeTheme = activeTheme === 'dark' ? 'light' : 'dark';
+  setAppTheme(activeTheme);
+});
+
+// Multilingual Translation System (ID, EN, ZH, KO)
+const TRANSLATIONS = {
+  id: {
+    lang_label: "🌐 BAHASA:",
+    badge: "🛠️ IT SUPPORT & SYSADMIN",
+    role: "Spesialis IT Support & Admin Sistem",
+    headline: "Dukungan IT Teruji & Administrasi Sistem Bebas Downtime.",
+    pitch: "Menyediakan diagnosa hardware cepat, routing jaringan Mikrotik, dan pemeliharaan multi-endpoint di lantai pabrik maupun kantor perusahaan. Memadukan penanganan kendala teknis lapangan dengan otomasi <strong>PowerShell 7+</strong> dan database <strong>SQL</strong> untuk menjamin uptime maksimal.",
+    btn_cv: "📄 UNDUH CV",
+    btn_wa: "💬 WHATSAPP ↗",
+    btn_email: "✉️ SALIN EMAIL",
+    stat1_txt: "Pengalaman Lapangan IT & Produksi Pabrik",
+    stat2_txt: "Workstation, Jaringan LAN & POS Kasir Dikelola",
+    stat3_txt: "Uptime Operasional Jaringan Pabrik & Kantor",
+    term_tip: "💡 Klik shortcut di bawah untuk menjalankan simulasi perintah IT support:",
+    pillars_label: "SPESIALISASI UTAMA",
+    pillars_head: "Dirancang untuk Ketersediaan Tinggi & Dukungan Lapangan Cepat.",
+    p1_title: "Sistem Hardware & PC Endpoint",
+    p1_desc: "Diagnosa komponen (RAM, SSD, PSU), audit drive SMART, ganti thermal paste, instalasi Windows 10/11 Pro & Linux Debian headless, serta kloning cepat HDD ke SSD.",
+    p2_title: "Teknik Jaringan & Infrastruktur",
+    p2_desc: "Pengkabelan LAN Cat5e/Cat6 Gigabit (T568B), konfigurasi Mikrotik, segmentasi VLAN 802.1Q, manajemen IP DHCP/Static, enterprise Wi-Fi AP, dan analisa paket Wireshark.",
+    p3_title: "Hardware POS & Otomasi IT",
+    p3_desc: "Pemeliharaan printer thermal nota ESC/POS, barcode scanner industri, kiosk layar sentuh, didukung skrip PowerShell 7+, batch file, M365, dan administrasi database ERP/SQL.",
+    proj_label: "PROYEK PILIHAN",
+    proj_head: "Pekerjaan Teknis Terverifikasi.",
+    pr1_title: "Toolkit Otomasi IT & Pemeliharaan Endpoint",
+    pr1_desc: "Pengembangan suite skrip PowerShell 7+ dan Windows batch untuk diagnosa workstation tanpa intervensi manual, pembersihan disk, pelaporan SMART drive, dan deployment silent software.",
+    pr2_title: "Q-Premium Kiosk Antrean & Cetak ESC/POS",
+    pr2_desc: "Konfigurasi dan pemeliharaan hardware mesin antrean dan POS, integrasi printer thermal ESC/POS, protokol hex auto-cutter, barcode scanner USB/RS-232, dan penanganan print spooler beku.",
+    pr3_title: "Setup Kiosk Layar Sentuh & Jaringan Pabrik",
+    pr3_desc: "Pemasangan terminal kiosk layar sentuh industri dan penarikan kabel LAN Cat6 Gigabit di area produksi pabrik. Setup router Mikrotik dengan VLAN 802.1Q dan AP Wi-Fi anti interferensi.",
+    pr4_title: "Administrasi Sistem ERP & Manajemen Stok",
+    pr4_desc: "Pemeliharaan operasional harian database Odoo dan ERPNext. Eksekusi query PostgreSQL, penyelesaian konflik sinkronisasi, manajemen hak akses M365/Google Workspace, dan remote support AnyDesk.",
+    edu_label: "LATAR BELAKANG AKADEMIK",
+    edu_heading: "Pendidikan.",
+    edu_inst: "Universitas Islam Nahdlatul Ulama (UNISNU) Jepara",
+    edu_degree: "S1 Sistem Informasi (Bachelor of Information Systems) | Mahasiswa Tingkat Akhir",
+    edu_focus: "Fokus: Software Engineering, Data Science, Machine Learning, dan Enterprise Systems",
+    cert_label: "KREDENSIAL TERVERIFIKASI",
+    cert_head: "Sertifikasi Resmi.",
+    footer_head: "Butuh Dukungan IT Bebas Downtime?",
+    footer_sub: "Siap menangani pemeliharaan workstation kantor, infrastruktur jaringan pabrik, dan otomasi sistem IT."
+  },
+  en: {
+    lang_label: "🌐 LANGUAGE:",
+    badge: "🛠️ IT SUPPORT & SYSADMIN",
+    role: "IT Support Specialist & Systems Admin",
+    headline: "Battle-Tested IT Support & Zero-Downtime Systems Administration.",
+    pitch: "Delivering rapid hardware diagnostics, Mikrotik network routing, and multi-endpoint maintenance across factory floors and corporate offices. Combines field troubleshooting with <strong>PowerShell 7+</strong> automation and <strong>SQL</strong> database upkeep to guarantee maximum system uptime.",
+    btn_cv: "📄 DOWNLOAD CV",
+    btn_wa: "💬 WHATSAPP ↗",
+    btn_email: "✉️ COPY EMAIL",
+    stat1_txt: "Hands-on IT Field & Production Support",
+    stat2_txt: "Workstations, LAN & POS Hardware Maintained",
+    stat3_txt: "Factory Network & Systems Operations Uptime",
+    term_tip: "💡 Click any pill below to run simulated IT support commands:",
+    pillars_label: "CORE SPECIALIZATION",
+    pillars_head: "Built for High Availability & Rapid Field Support.",
+    p1_title: "Hardware & Endpoint PC Systems",
+    p1_desc: "Component-level diagnostics (RAM, SSD, PSU), SMART drive health audits, thermal paste renewal, Windows 10/11 Pro & Debian headless deployments, and rapid HDD-to-SSD cloning.",
+    p2_title: "Network & Infrastructure Engineering",
+    p2_desc: "Structured Cat5e/Cat6 LAN cabling (T568B), Mikrotik router config, VLAN (802.1Q) segmentation, DHCP/Static IP management, enterprise Wi-Fi APs, and Wireshark packet analysis.",
+    p3_title: "POS Systems & IT Automation",
+    p3_desc: "Maintenance of ESC/POS thermal printers, industrial barcode scanners, and touchscreen kiosks, accelerated by PowerShell 7+ scripts, batch automation, M365, and ERP/SQL administration.",
+    proj_label: "SELECTED PROJECTS",
+    proj_head: "Featured Technical Work.",
+    pr1_title: "IT Automation Toolkit & Endpoint Maintenance",
+    pr1_desc: "Engineered automated PowerShell 7+ and Windows batch suites for unattended workstation diagnostics, disk optimization, drive health (SMART) auditing, and silent driver/patch deployments across office endpoints.",
+    pr2_title: "Q-Premium Queue POS & ESC/POS Printing",
+    pr2_desc: "Configured and maintained high-reliability queue management and POS hardware, integrating ESC/POS thermal receipt printers, auto-cutter hex protocols, USB/RS-232 barcode scanners, and resolving Windows print spooler lockups.",
+    pr3_title: "Factory Touchscreen & Structured Network Setup",
+    pr3_desc: "Deployed industrial touchscreen kiosks and structured Cat6 Gigabit LAN across factory production lines. Configured Mikrotik routers with VLAN segmentation (802.1Q), DHCP reservations, and Wi-Fi APs for zero-interference plant operations.",
+    pr4_title: "ERP & Inventory Systems Administration",
+    pr4_desc: "Administered daily operations and database health for Odoo and ERPNext production tracking. Executed PostgreSQL queries, resolved sync conflicts, managed M365/Google Workspace user permissions, and provided prompt remote support via AnyDesk.",
+    edu_label: "ACADEMIC BACKGROUND",
+    edu_heading: "Education.",
+    edu_inst: "Universitas Islam Nahdlatul Ulama (UNISNU) Jepara",
+    edu_degree: "Bachelor of Information Systems (S1) | Final-Year Undergraduate",
+    edu_focus: "Focus: Software Engineering, Data Science, Machine Learning, and Enterprise Systems",
+    cert_label: "VERIFIED CREDENTIALS",
+    cert_head: "Certifications.",
+    footer_head: "Need Zero-Downtime IT Support?",
+    footer_sub: "Available for corporate workstation maintenance, factory network infrastructure, and automated IT systems support."
+  },
+  zh: {
+    lang_label: "🌐 语言:",
+    badge: "🛠️ IT技术支持与系统管理",
+    role: "IT支持专家与系统管理员",
+    headline: "实战检验的IT技术支持与零停机系统运维管理。",
+    pitch: "在工厂车间和企业办公区提供快速硬件故障诊断、Mikrotik网络路由以及多终端维护。结合实地排错经验与<strong>PowerShell 7+</strong>自动化脚本和<strong>SQL</strong>数据库维护，确保系统最高在线率。",
+    btn_cv: "📄 下载简历",
+    btn_wa: "💬 WHATSAPP 沟通 ↗",
+    btn_email: "✉️ 复制邮箱",
+    stat1_txt: "一线IT与工厂生产技术支持经验",
+    stat2_txt: "已维护的工作站、局域网与POS收银硬件",
+    stat3_txt: "工厂网络与办公系统运行在线率",
+    term_tip: "💡 点击下方快捷按钮运行IT运维模拟命令：",
+    pillars_label: "核心专业能力",
+    pillars_head: "专为高可用性与快速现场支持打造。",
+    p1_title: "硬件与终端PC系统",
+    p1_desc: "主板/内存/固态/电源级故障排查、SMART硬盘健康检测、散热硅脂更换、Windows 10/11专业版及Debian无头服务部署、机械硬盘极速克隆至固态。",
+    p2_title: "网络与基础设施工程",
+    p2_desc: "Cat5e/Cat6千兆局域网结构化布线(T568B)、Mikrotik路由器配置、VLAN(802.1Q)划分、静态与DHCP地址绑定、企业级Wi-Fi AP布设及Wireshark抓包排错。",
+    p3_title: "POS系统与IT运维自动化",
+    p3_desc: "ESC/POS热敏票据打印机维护、工业条码扫描枪校准、产线触摸屏终端排障，并辅以PowerShell 7+与批处理自动化运维、M365及ERP数据库管理。",
+    proj_label: "精选实战项目",
+    proj_head: "经过现场验证的技术项目。",
+    pr1_title: "IT自动化运维工具箱与终端管理",
+    pr1_desc: "编写PowerShell 7+与批处理自动维护脚本，实现无人值守工作站诊断、垃圾清理、SMART健康汇报及静默补丁/驱动推送。",
+    pr2_title: "Q-Premium 排队取号机与ESC/POS热敏打印",
+    pr2_desc: "配置高可靠性排队机与收银硬件，集成ESC/POS切刀协议、USB/RS-232扫描设备，并自动化修复Windows后台打印机挂起故障。",
+    pr3_title: "工厂触摸屏终端与千兆局域网搭建",
+    pr3_desc: "在生产车间铺设六类千兆网线并部署防干扰工业触控屏终端。配置Mikrotik VLAN隔离网络，保障车间ERP与物料系统稳定在线。",
+    pr4_title: "ERP与库存追踪系统日常维护",
+    pr4_desc: "保障Odoo与ERPNext日常数据库稳定。编写PostgreSQL查询、解决数据冲突、管理M365与谷歌企业邮箱权限，并提供AnyDesk远程急救。",
+    edu_label: "教育背景",
+    edu_heading: "教育经历.",
+    edu_inst: "UNISNU Jepara大学 (Universitas Islam Nahdlatul Ulama)",
+    edu_degree: "S1 信息系统学士 | 应届大四在读 (2021 – 2025/2026)",
+    edu_focus: "专业方向：软件工程、数据科学、机器学习与企业级系统",
+    cert_label: "权威认证资质",
+    cert_head: "专业技术认证.",
+    footer_head: "需要零停机IT运维支持？",
+    footer_sub: "随时可承接企业办公电脑维护、工厂网络布线与架构、以及自动化IT系统运维支持。"
+  },
+  ko: {
+    lang_label: "🌐 언어:",
+    badge: "🛠️ IT 지원 & 시스템 관리자",
+    role: "IT 지원 전문가 및 시스템 관리자",
+    headline: "현장 검증된 IT 지원 및 무중단 시스템 관리.",
+    pitch: "공장 생산 현장 및 기업 오피스 전반에서 신속한 하드웨어 진단, Mikrotik 네트워크 라우팅, 다중 엔드포인트 유지보수를 제공합니다. 현장 문제 해결 역량에 <strong>PowerShell 7+</strong> 자동화 및 <strong>SQL</strong> 데이터베이스 관리를 결합하여 최대 시스템 가동 시간을 보장합니다.",
+    btn_cv: "📄 이력서 다운로드",
+    btn_wa: "💬 WHATSAPP 문의 ↗",
+    btn_email: "✉️ 이메일 복사",
+    stat1_txt: "현장 IT 및 공장 생산 지원 경력",
+    stat2_txt: "유지보수된 워크스테이션, LAN 및 POS 하드웨어",
+    stat3_txt: "공장 네트워크 및 시스템 가동률",
+    term_tip: "💡 아래 바로가기를 클릭하여 IT 지원 시뮬레이션 명령을 실행하세요:",
+    pillars_label: "핵심 전문 역량",
+    pillars_head: "고가용성 및 신속한 현장 대응을 위해 구축됨.",
+    p1_title: "하드웨어 및 엔드포인트 PC 시스템",
+    p1_desc: "부품 단위 진단(RAM, SSD, 파워서플라이), SMART 디스크 건강 점검, 서멀 구리스 재도포, Windows 10/11 Pro 및 데비안 리눅스 구축, HDD에서 SSD로의 고속 클로닝.",
+    p2_title: "네트워크 및 인프라 엔지니어링",
+    p2_desc: "Cat5e/Cat6 기가비트 LAN 배선(T568B), Mikrotik 라우터 설정, VLAN 802.1Q 분할, DHCP/고정 IP 관리, 기업용 Wi-Fi AP 및 Wireshark 패킷 분석.",
+    p3_title: "POS 시스템 및 IT 자동화",
+    p3_desc: "ESC/POS 영수증 프린터 유지보수, 산업용 바코드 스캐너, 터치스크린 키오스크 관리 및 PowerShell 7+ 자동화 스크립트, M365, ERP/SQL 관리.",
+    proj_label: "주요 기술 프로젝트",
+    proj_head: "현장 검증 완료 프로젝트.",
+    pr1_title: "IT 자동화 툴킷 및 엔드포인트 유지보수",
+    pr1_desc: "무인 워크스테이션 진단, 디스크 최적화, SMART 디스크 리포팅 및 백그라운드 드라이버/패치 배포를 위한 PowerShell 7+ 자동화 스위트 구축.",
+    pr2_title: "Q-Premium 대기열 키오스크 및 ESC/POS 인쇄",
+    pr2_desc: "고신뢰성 순번대기기 및 POS 하드웨어 설정, ESC/POS 자동 커팅 제어, 바코드 스캐너 연결 및 Windows 프린터 스풀러 오류 복구.",
+    pr3_title: "공장 터치스크린 및 기가비트 네트워크 구축",
+    pr3_desc: "공장 생산 라인 전반에 산업용 터치 키오스크와 Cat6 기가비트 LAN 구축. 무간섭 공장 운영을 위해 Mikrotik VLAN 분할 및 무선 AP 설정.",
+    pr4_title: "ERP 및 재고 관리 시스템 운영 지원",
+    pr4_desc: "Odoo 및 ERPNext 일일 데이터베이스 운영 관리. PostgreSQL 쿼리 처리, 데이터 동기화 문제 해결, M365 권한 관리 및 AnyDesk 원격 지원 제공.",
+    edu_label: "학력 사항",
+    edu_heading: "학력.",
+    edu_inst: "UNISNU Jepara 대학교 (Universitas Islam Nahdlatul Ulama)",
+    edu_degree: "S1 정보시스템 학사 | 졸업 예정 / 4학년 재학 (2021 – 2025/2026)",
+    edu_focus: "집중 분야: 소프트웨어 엔지니어링, 데이터 사이언스, 머신러닝 및 엔터프라이즈 시스템",
+    cert_label: "공인 기술 자격증",
+    cert_head: "자격증.",
+    footer_head: "무중단 IT 지원이 필요하십니까?",
+    footer_sub: "기업 워크스테이션 유지보수, 공장 네트워크 인프라 구축 및 자동화 IT 시스템 지원이 가능합니다."
+  }
+};
+
+function switchLang(lang) {
+  if (!TRANSLATIONS[lang]) return;
+  localStorage.setItem('lang', lang);
+  document.getElementById('langSelect').value = lang;
+
+  const dict = TRANSLATIONS[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key]) {
+      el.innerHTML = dict[key];
+    }
+  });
+}
+
+// Initial Language load (Default to 'id' as requested, or saved choice)
+const currentLang = localStorage.getItem('lang') || 'id';
+switchLang(currentLang);
+
+// Copy Feedback
+function copyEmail(address) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(address);
+  }
+  const toast = document.getElementById('copyToast');
+  toast.textContent = 'COPIED: ' + address;
+  toast.classList.add('active');
+  setTimeout(() => {
+    toast.classList.remove('active');
+  }, 2200);
+}
+
+// Terminal Simulation
+const termScreen = document.getElementById('termScreen');
+const termInput = document.getElementById('termCmdInput');
+
+const COMMAND_MAP = {
+  hardware: "HARDWARE DIAGNOSTICS:\n- PC Component troubleshooting (RAM, SSD, PSU, Motherboard)\n- SMART Drive health audit & Bad Sector checking\n- Thermal paste renewal & Heat sink cleaning\n- HDD-to-SSD cloning & Windows 10/11 Pro licensing\n- BSOD Minidump debugging & memory testing",
+  network: "NETWORKING & CONNECTIVITY:\n- Mikrotik RouterOS configuration & bandwidth management\n- VLAN 802.1Q segmentation & IP DHCP/Static reservation\n- Cat5e/Cat6 LAN structured cabling & T568B crimping\n- Enterprise Wi-Fi Access Point deployment\n- Wireshark packet capture & network latency analysis",
+  pos: "POS & PRINTER HARDWARE:\n- ESC/POS thermal receipt printers & auto-cutter hex codes\n- USB & RS-232 industrial barcode scanner calibration\n- Windows Print Spooler freeze recovery scripts\n- Factory touchscreen kiosk hardware maintenance",
+  automation: "POWERSHELL 7+ AUTOMATION:\n- Automated workstation diagnostic & disk cleanup scripts\n- Silent software installation via winget/msiexec\n- Automated DNS cache flusher & network adapter resets\n- Windows Event Log monitoring & service watchdog",
+  skills: "CORE COMPETENCIES: Hardware Troubleshooting, Mikrotik RouterOS, Cat6 Cabling, ESC/POS, PowerShell 7+, Windows 10/11 Pro, Linux Debian, Odoo/ERPNext, PostgreSQL, M365.",
+  cv: "DOWNLOADING: Triggering download of CV_Muhammad_Rizky.pdf... Check your downloads folder!",
+  whatsapp: "WHATSAPP: Direct chat at https://wa.me/6281393177004 (Opening chat window...)",
+  contact: "Email: muhamrizky00@gmail.com | WhatsApp: +62 813-9317-7004 (wa.me/6281393177004) | GitHub: github.com/mrizkymxx | Location: Jepara, Jawa Tengah",
+  clear: "CLEAR"
+};
+
+function execTerm(cmd) {
+  termInput.value = cmd;
+  runCommand(cmd);
+}
+
+function handleTermInput(e) {
+  e.preventDefault();
+  const cmd = termInput.value.trim().toLowerCase();
+  if (!cmd) return;
+  runCommand(cmd);
+  termInput.value = '';
+}
+
+function runCommand(cmd) {
+  if (cmd === 'clear') {
+    termScreen.innerHTML = '';
+    return;
+  }
+
+  const promptLine = document.createElement('div');
+  promptLine.innerHTML = '<span style="color:#38bdf8; font-weight:700;">PS C:\\IT-Support&gt;</span> <span style="color:#ffffff;">' + sanitize(cmd) + '</span>';
+  termScreen.appendChild(promptLine);
+
+  const replyLine = document.createElement('div');
+  replyLine.style.color = '#4ade80';
+
+  if (COMMAND_MAP[cmd]) {
+    replyLine.innerText = COMMAND_MAP[cmd];
+    if (cmd === 'cv') {
+      const a = document.createElement('a');
+      a.href = 'CV_Muhammad_Rizky.pdf';
+      a.download = 'CV_Muhammad_Rizky_IT_Developer.pdf';
+      a.click();
+    } else if (cmd === 'whatsapp') {
+      window.open('https://wa.me/6281393177004?text=Halo%20Rizky,%20saya%20melihat%20portofolio%20Anda', '_blank');
+    }
+  } else {
+    replyLine.style.color = '#f87171';
+    replyLine.innerText = "Command not recognized: '" + cmd + "'. Valid: hardware, network, pos, automation, cv, whatsapp, skills, contact, clear.";
+  }
+
+  termScreen.appendChild(replyLine);
+  termScreen.scrollTop = termScreen.scrollHeight;
+}
+
+function sanitize(str) {
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+</script>
